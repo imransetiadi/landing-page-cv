@@ -1,3 +1,44 @@
+// ===== Cyberpunk Digital Rain =====
+function createCyberRain() {
+    const container = document.getElementById('cyber-rain');
+    if (!container) return;
+
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ';
+    const dropCount = 20;
+
+    for (let i = 0; i < dropCount; i++) {
+        const drop = document.createElement('div');
+        drop.classList.add('rain-drop');
+
+        // Generate random string of characters
+        let text = '';
+        const length = Math.floor(Math.random() * 10 + 5);
+        for (let j = 0; j < length; j++) {
+            text += chars[Math.floor(Math.random() * chars.length)];
+        }
+        drop.textContent = text;
+
+        drop.style.left = Math.random() * 100 + '%';
+        drop.style.animationDuration = (Math.random() * 6 + 4) + 's';
+        drop.style.animationDelay = (Math.random() * 8) + 's';
+        drop.style.fontSize = (Math.random() * 4 + 8) + 'px';
+
+        // Random colors: green, pink, cyan
+        const colors = [
+            'rgba(0, 255, 136, 0.5)',
+            'rgba(255, 0, 200, 0.4)',
+            'rgba(0, 200, 255, 0.4)'
+        ];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        drop.style.color = color;
+        drop.style.textShadow = `0 0 5px ${color}`;
+
+        container.appendChild(drop);
+    }
+}
+
+createCyberRain();
+
 // ===== Particle Background =====
 function createParticles() {
     const container = document.getElementById('particles');
@@ -13,7 +54,7 @@ function createParticles() {
         particle.style.height = particle.style.width;
 
         // Random neon colors
-        const colors = ['#00ff88', '#b000ff', '#00ff88', '#ff00e5'];
+        const colors = ['#00ff88', '#ff00c8', '#00c8ff', '#ff00c8'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         particle.style.background = color;
         particle.style.boxShadow = `0 0 6px ${color}`;
