@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imran Setiadi — Cloud Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-particles" id="particles"></div>
+    <div class="bg-clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">&lt;IS/&gt;</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting glitch-text" data-text="Hello, World_">Hello, World_</p>
+                <h1 class="hero-name neon-text">Imran Setiadi</h1>
+                <h2 class="hero-title">
+                    <span class="typing-wrapper">
+                        <span class="typing-text">Cloud Engineer</span>
+                        <span class="cursor">|</span>
+                    </span>
+                </h2>
+                <p class="hero-subtitle">Building & maintaining resilient cloud infrastructure with focus on stability, security, and high performance.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-neon">Get in Touch</a>
+                    <a href="#experience" class="btn btn-outline-neon">View Experience</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/imransetiadi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/imransetiadi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.credly.com/users/imran-setiadi" target="_blank" rel="noopener noreferrer" aria-label="Credly"><i class="fas fa-award"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hex-container">
+                    <div class="hex-ring hex-ring-1"></div>
+                    <div class="hex-ring hex-ring-2"></div>
+                    <div class="hex-ring hex-ring-3"></div>
+                    <div class="hex-core">
+                        <img src="profile.jpg" alt="Imran Setiadi" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <div class="scroll-line"></div>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Experienced Cloud Engineer with deep expertise in managing and optimizing enterprise-grade cloud infrastructure. Currently focused on managing cloud infrastructure at a provider company, ensuring all services run with high stability, security, and peak performance.</p>
+                    <p>Proven track record in improving cluster performance, executing zero-downtime cluster upgrades, and implementing best practices for system security and reliability. Extensive hands-on experience with container orchestration technologies, multi-cloud platforms, and Linux system administration.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number neon-accent">4+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number neon-accent">3</span>
+                        <span class="stat-label">Cloud Platforms</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number neon-accent">10+</span>
+                        <span class="stat-label">Technical Skills</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Cloud & DevOps Engineer</h3>
+                            <span class="timeline-company">PT. Inovasi Informatika Indonesia (i3)</span>
+                        </div>
+                        <span class="timeline-date"><i class="far fa-calendar-alt"></i> 3 Years 10 Months</span>
+                        <p class="timeline-desc">Managed enterprise-scale cloud infrastructure, performed cluster performance improvements, cluster upgrades, and ensured stability and security of all cloud services.</p>
+                        <div class="timeline-tags">
+                            <span>OpenStack</span>
+                            <span>OpenShift</span>
+                            <span>Linux</span>
+                            <span>Container</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>DevOps Engineer</h3>
+                            <span class="timeline-company">Boer Technology</span>
+                        </div>
+                        <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2 Months</span>
+                        <p class="timeline-desc">Implemented and managed CI/CD pipelines and infrastructure to support software development workflows.</p>
+                        <div class="timeline-tags">
+                            <span>DevOps</span>
+                            <span>CI/CD</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Cyber Security Trainee</h3>
+                            <span class="timeline-company">Digitalent Talent Scholarship</span>
+                        </div>
+                        <span class="timeline-date"><i class="far fa-calendar-alt"></i> 1 Month</span>
+                        <p class="timeline-desc">Intensive cybersecurity training covering penetration testing techniques, network security, and infrastructure security best practices.</p>
+                        <div class="timeline-tags">
+                            <span>Cyber Security</span>
+                            <span>Network Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Electrical Automation Engineer</h3>
+                            <span class="timeline-company">PT. Logamindo Pratama</span>
+                        </div>
+                        <span class="timeline-date"><i class="far fa-calendar-alt"></i> 3 Months</span>
+                        <p class="timeline-desc">Handled electrical automation systems and maintained industrial automation devices.</p>
+                        <div class="timeline-tags">
+                            <span>Automation</span>
+                            <span>Electrical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>ICT Staff (Intern)</h3>
+                            <span class="timeline-company">AirAsia</span>
+                        </div>
+                        <span class="timeline-date"><i class="far fa-calendar-alt"></i> 3 Months</span>
+                        <p class="timeline-desc">Supported ICT operations including network management and enterprise IT systems.</p>
+                        <div class="timeline-tags">
+                            <span>ICT</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openstack/openstack-original.svg" alt="OpenStack" class="skill-icon">OpenStack</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="skill-icon">AWS</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="skill-icon">GCP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-dharmachakra"></i> Container & Orchestration</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="OpenShift" class="skill-icon">OpenShift</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-icon">Docker / Podman</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" class="skill-icon">Nginx</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fab fa-linux"></i> Linux & SysAdmin</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="RHEL" class="skill-icon">RHEL</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/centos/centos-original.svg" alt="CentOS" class="skill-icon">CentOS</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" class="skill-icon">Ubuntu</span>
+                        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="SysAdmin" class="skill-icon">System Administration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> Education</h2>
+            <div class="education-card">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-details">
+                    <h3>Bachelor of Informatics Engineering (S1)</h3>
+                    <p class="education-school">University of Lampung</p>
+                    <p class="education-desc">Informatics Engineering program with a focus on system development and computer networking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> Certifications</h2>
+            <div class="cert-content">
+                <div class="cert-highlights">
+                    <div class="cert-highlight-card">
+                        <div class="cert-badge">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="Red Hat" class="cert-badge-img">
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-issuer">Red Hat</span>
+                            <h3>Red Hat Certified System Administrator</h3>
+                            <span class="cert-abbr">RHCSA</span>
+                        </div>
+                    </div>
+                    <div class="cert-highlight-card">
+                        <div class="cert-badge">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="Red Hat" class="cert-badge-img">
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-issuer">Red Hat</span>
+                            <h3>Red Hat Certified System Administrator in OpenShift</h3>
+                            <span class="cert-abbr">EX180</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-intro">
+                    <p>View my full collection of badges and certifications on Credly.</p>
+                </div>
+                <a href="https://www.credly.com/users/imran-setiadi" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    <div class="cert-card">
+                        <i class="fas fa-award"></i>
+                        <span>View All Certifications on Credly</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title"><span class="title-decorator">//</span> Get in Touch</h2>
+            <div class="contact-grid">
+                <a href="mailto:imransetiadi22@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>imransetiadi22@gmail.com</p>
+                </a>
+                <a href="tel:+6282110286777" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+62 821 1028 6777</p>
+                </a>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Jakarta, Indonesia</p>
+                </div>
+                <a href="https://www.linkedin.com/in/imransetiadi/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-linkedin-in"></i>
+                    <h3>LinkedIn</h3>
+                    <p>imransetiadi</p>
+                </a>
+                <a href="https://github.com/imransetiadi" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>imransetiadi</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Imran Setiadi <span class="footer-separator">|</span> Built with passion</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
