@@ -66,8 +66,8 @@ ul {
     position: fixed;
     inset: 0;
     background-image:
-        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
@@ -552,8 +552,8 @@ ul {
 
 .hex-container {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 380px;
+    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -596,8 +596,8 @@ ul {
 }
 
 .hex-core {
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 240, 255, 0.15), rgba(10, 10, 15, 0.9));
     border: 2px solid rgba(0, 240, 255, 0.4);
@@ -1273,13 +1273,13 @@ ul {
     }
 
     .hex-container {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 
     .hex-core {
-        width: 130px;
-        height: 130px;
+        width: 180px;
+        height: 180px;
     }
 
     .hex-core i {
