@@ -1,3 +1,115 @@
+// ===== Electro Waves Animation =====
+(function () {
+    const canvas = document.getElementById('electro-waves');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let animationId;
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    const waves = [
+        { y: 0.3, amplitude: 30, frequency: 0.02, speed: 0.015, color: 'rgba(0, 255, 136, 0.15)', lineWidth: 1.5 },
+        { y: 0.4, amplitude: 20, frequency: 0.03, speed: -0.02, color: 'rgba(0, 255, 136, 0.1)', lineWidth: 1 },
+        { y: 0.6, amplitude: 40, frequency: 0.015, speed: 0.01, color: 'rgba(0, 255, 200, 0.12)', lineWidth: 1.5 },
+        { y: 0.7, amplitude: 25, frequency: 0.025, speed: -0.018, color: 'rgba(0, 200, 255, 0.08)', lineWidth: 1 },
+        { y: 0.5, amplitude: 35, frequency: 0.018, speed: 0.012, color: 'rgba(0, 255, 136, 0.06)', lineWidth: 2 },
+    ];
+
+    let time = 0;
+
+    function drawWave(wave) {
+        const baseY = height * wave.y;
+
+        ctx.beginPath();
+        ctx.strokeStyle = wave.color;
+        ctx.lineWidth = wave.lineWidth;
+        ctx.shadowColor = wave.color.replace(/[\d.]+\)$/, '0.5)');
+        ctx.shadowBlur = 8;
+
+        for (let x = 0; x <= width; x += 2) {
+            const y = baseY +
+                Math.sin(x * wave.frequency + time * wave.speed * 60) * wave.amplitude +
+                Math.sin(x * wave.frequency * 0.5 + time * wave.speed * 30) * (wave.amplitude * 0.5);
+            
+            if (x === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        }
+
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+    }
+
+    // Draw electric sparks along waves occasionally
+    function drawSpark(wave) {
+        if (Math.random() > 0.005) return; // rare sparks
+
+        const sparkX = Math.random() * width;
+        const baseY = height * wave.y;
+        const sparkY = baseY +
+            Math.sin(sparkX * wave.frequency + time * wave.speed * 60) * wave.amplitude;
+
+        ctx.beginPath();
+        ctx.arc(sparkX, sparkY, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.shadowColor = '#00ff88';
+        ctx.shadowBlur = 15;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Draw small branches
+        for (let i = 0; i < 3; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const length = Math.random() * 15 + 5;
+            ctx.beginPath();
+            ctx.moveTo(sparkX, sparkY);
+            ctx.lineTo(
+                sparkX + Math.cos(angle) * length,
+                sparkY + Math.sin(angle) * length
+            );
+            ctx.strokeStyle = 'rgba(0, 255, 136, 0.6)';
+            ctx.lineWidth = 0.5;
+            ctx.shadowColor = '#00ff88';
+            ctx.shadowBlur = 5;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        time += 0.016;
+
+        waves.forEach(wave => {
+            drawWave(wave);
+            drawSpark(wave);
+        });
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Pause when tab is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            cancelAnimationFrame(animationId);
+        } else {
+            animate();
+        }
+    });
+})();
+
 // ===== Particle Background =====
 function createParticles() {
     const container = document.getElementById('particles');

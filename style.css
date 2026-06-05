@@ -218,6 +218,17 @@ ul {
     100% { transform: translate(-10px, 10px) scale(0.95); }
 }
 
+/* ===== Electro Waves ===== */
+.electro-waves {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
 /* ===== Particles ===== */
 .bg-particles {
     position: fixed;
@@ -1445,6 +1456,10 @@ ul {
 
     .bg-hex-grid {
         opacity: 0.5;
+    }
+
+    .electro-waves {
+        opacity: 0.3;
     }
 }
 
