@@ -1,3 +1,53 @@
+// ===== Star Field Background =====
+function createStars() {
+    const starsContainer = document.getElementById('stars');
+    const stars2Container = document.getElementById('stars2');
+    const starCount = 150;
+    const starCount2 = 80;
+
+    const classes = ['star-dim', 'star-medium', 'star-bright'];
+    const colors = ['', '', '', '', 'star-blue', 'star-orange']; // mostly white
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.classList.add(classes[Math.floor(Math.random() * classes.length)]);
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        if (color) star.classList.add(color);
+
+        const size = Math.random() * 2 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--star-opacity', (Math.random() * 0.5 + 0.3).toString());
+        star.style.animationDuration = (Math.random() * 4 + 2) + 's';
+        star.style.animationDelay = (Math.random() * 3) + 's';
+
+        starsContainer.appendChild(star);
+    }
+
+    // Second layer - smaller, more subtle
+    for (let i = 0; i < starCount2; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star', 'star-dim');
+
+        const size = Math.random() * 1 + 0.5;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--star-opacity', (Math.random() * 0.3 + 0.1).toString());
+        star.style.animationDuration = (Math.random() * 6 + 3) + 's';
+        star.style.animationDelay = (Math.random() * 5) + 's';
+
+        stars2Container.appendChild(star);
+    }
+}
+
+createStars();
+
 // ===== Particle Background =====
 function createParticles() {
     const container = document.getElementById('particles');
