@@ -40,7 +40,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text);
-    background: #020209;
+    background: #060a0f;
     line-height: 1.7;
     overflow-x: hidden;
     font-size: 16px;
@@ -62,66 +62,160 @@ ul {
 }
 
 /* ===== Background Effects ===== */
-/* ===== Space Background ===== */
-.bg-space {
+/* ===== Robotic Background ===== */
+.bg-circuit {
     position: fixed;
     inset: 0;
-    background: radial-gradient(ellipse at center, #0d0d1a 0%, #020209 60%, #000000 100%);
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Nebula / Space Clouds */
-.nebula {
+.circuit-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hexagonal Grid Overlay */
+.bg-hex-grid {
     position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        linear-gradient(30deg, rgba(0, 255, 136, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(0, 255, 136, 0.03) 87.5%, rgba(0, 255, 136, 0.03)),
+        linear-gradient(150deg, rgba(0, 255, 136, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(0, 255, 136, 0.03) 87.5%, rgba(0, 255, 136, 0.03)),
+        linear-gradient(30deg, rgba(0, 255, 136, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(0, 255, 136, 0.03) 87.5%, rgba(0, 255, 136, 0.03)),
+        linear-gradient(150deg, rgba(0, 255, 136, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(0, 255, 136, 0.03) 87.5%, rgba(0, 255, 136, 0.03)),
+        linear-gradient(60deg, rgba(0, 255, 136, 0.02) 25%, transparent 25.5%, transparent 75%, rgba(0, 255, 136, 0.02) 75%, rgba(0, 255, 136, 0.02)),
+        linear-gradient(60deg, rgba(0, 255, 136, 0.02) 25%, transparent 25.5%, transparent 75%, rgba(0, 255, 136, 0.02) 75%, rgba(0, 255, 136, 0.02));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Data Streams - vertical flowing lines */
+.bg-data-streams {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.data-stream {
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 255, 136, 0.4), transparent);
+    animation: data-flow linear infinite;
+}
+
+.data-stream-1 {
+    left: 10%;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    height: 80px;
+}
+
+.data-stream-2 {
+    left: 25%;
+    animation-duration: 5.5s;
+    animation-delay: 1s;
+    height: 120px;
+}
+
+.data-stream-3 {
+    left: 45%;
+    animation-duration: 4.5s;
+    animation-delay: 2.5s;
+    height: 60px;
+}
+
+.data-stream-4 {
+    left: 65%;
+    animation-duration: 6s;
+    animation-delay: 0.5s;
+    height: 100px;
+}
+
+.data-stream-5 {
+    left: 80%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+    height: 90px;
+}
+
+.data-stream-6 {
+    left: 92%;
+    animation-duration: 4.8s;
+    animation-delay: 1.5s;
+    height: 70px;
+}
+
+@keyframes data-flow {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Glow Orbs */
+.bg-glow-orbs {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-orb {
+    position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
-    animation: nebula-pulse 15s ease-in-out infinite alternate;
+    animation: orb-float 12s ease-in-out infinite alternate;
 }
 
-.nebula-1 {
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(100, 0, 200, 0.08), rgba(50, 0, 150, 0.03), transparent);
-    top: -5%;
-    right: -10%;
-}
-
-.nebula-2 {
-    width: 500px;
-    height: 350px;
-    background: radial-gradient(ellipse, rgba(0, 100, 255, 0.06), rgba(0, 50, 200, 0.02), transparent);
-    bottom: 10%;
-    left: -8%;
-    animation-delay: 5s;
-}
-
-.nebula-3 {
+.glow-orb-1 {
     width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.06), transparent);
+    top: -5%;
+    right: -5%;
+    animation-duration: 14s;
+}
+
+.glow-orb-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 200, 100, 0.05), transparent);
+    bottom: 10%;
+    left: -5%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+
+.glow-orb-3 {
+    width: 300px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(255, 0, 100, 0.05), rgba(200, 0, 80, 0.02), transparent);
-    top: 45%;
-    right: 20%;
-    animation-delay: 10s;
+    background: radial-gradient(circle, rgba(0, 255, 200, 0.04), transparent);
+    top: 50%;
+    left: 40%;
+    animation-duration: 18s;
+    animation-delay: 6s;
 }
 
-@keyframes nebula-pulse {
-    0% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(0.95); opacity: 0.7; }
-}
-
-/* ===== Grid Overlay ===== */
-.bg-grid {
-    position: fixed;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
+@keyframes orb-float {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -15px) scale(1.05); }
+    100% { transform: translate(-10px, 10px) scale(0.95); }
 }
 
 /* ===== Particles ===== */
