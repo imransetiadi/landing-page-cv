@@ -122,59 +122,81 @@ ul {
 
 .shooting-star {
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 4px;
+    height: 4px;
     background: #fff;
     border-radius: 50%;
     opacity: 0;
+    box-shadow: 0 0 6px #fff, 0 0 12px rgba(0, 240, 255, 0.5);
     animation: shoot linear infinite;
 }
 
 .shooting-star::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
-    transform: rotate(0deg);
-    transform-origin: right center;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(0, 240, 255, 0.4), transparent);
+    transform: translateY(-50%);
+    border-radius: 2px;
 }
 
 .shooting-star:nth-child(1) {
-    top: 15%;
-    left: 20%;
-    animation-duration: 3s;
-    animation-delay: 2s;
+    top: 10%;
+    left: 15%;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
 }
 
 .shooting-star:nth-child(2) {
-    top: 35%;
-    left: 60%;
-    animation-duration: 2.5s;
-    animation-delay: 6s;
+    top: 25%;
+    left: 55%;
+    animation-duration: 2s;
+    animation-delay: 4s;
 }
 
 .shooting-star:nth-child(3) {
-    top: 10%;
-    left: 80%;
-    animation-duration: 3.5s;
-    animation-delay: 10s;
+    top: 5%;
+    left: 75%;
+    animation-duration: 2.8s;
+    animation-delay: 7s;
 }
 
 .shooting-star:nth-child(4) {
-    top: 55%;
-    left: 30%;
-    animation-duration: 2.8s;
-    animation-delay: 14s;
+    top: 45%;
+    left: 25%;
+    animation-duration: 2.2s;
+    animation-delay: 10s;
 }
 
 .shooting-star:nth-child(5) {
-    top: 25%;
-    left: 45%;
-    animation-duration: 3.2s;
-    animation-delay: 18s;
+    top: 15%;
+    left: 40%;
+    animation-duration: 2.6s;
+    animation-delay: 13s;
+}
+
+.shooting-star:nth-child(6) {
+    top: 60%;
+    left: 65%;
+    animation-duration: 2.3s;
+    animation-delay: 16s;
+}
+
+.shooting-star:nth-child(7) {
+    top: 35%;
+    left: 10%;
+    animation-duration: 2.7s;
+    animation-delay: 19s;
+}
+
+.shooting-star:nth-child(8) {
+    top: 50%;
+    left: 80%;
+    animation-duration: 2.1s;
+    animation-delay: 22s;
 }
 
 @keyframes shoot {
@@ -182,20 +204,20 @@ ul {
         opacity: 0;
         transform: translate(0, 0) rotate(-35deg);
     }
-    5% {
+    3% {
         opacity: 1;
+    }
+    15% {
+        opacity: 1;
+        transform: translate(300px, 180px) rotate(-35deg);
     }
     20% {
-        opacity: 1;
-        transform: translate(200px, 120px) rotate(-35deg);
-    }
-    25% {
         opacity: 0;
-        transform: translate(250px, 150px) rotate(-35deg);
+        transform: translate(380px, 230px) rotate(-35deg);
     }
     100% {
         opacity: 0;
-        transform: translate(250px, 150px) rotate(-35deg);
+        transform: translate(380px, 230px) rotate(-35deg);
     }
 }
 
