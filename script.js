@@ -62,7 +62,7 @@ function createParticles() {
         particle.style.height = particle.style.width;
 
         // Random neon colors
-        const colors = ['#00f0ff', '#b000ff', '#00ff88', '#ff00e5'];
+        const colors = ['#00ff88', '#b000ff', '#00ff88', '#ff00e5'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         particle.style.background = color;
         particle.style.boxShadow = `0 0 6px ${color}`;
